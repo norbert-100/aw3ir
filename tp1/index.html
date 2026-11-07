@@ -1,41 +1,566 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>TP1</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <!-- Place favicon.ico in the root directory -->
+    <!--
+        Cette balise permet au site de s'adapter
+        aux téléphones, tablettes et ordinateurs.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      background-color: #e9ebee;
-      font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-size: 16px;
-      margin: 0 auto;
-      max-width: 800px;
-    }
-  </style>
+    <title>Norbert DJIGUEMDE - CV</title>
 
-  <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-  <!--<link rel="stylesheet" href="style.css">-->
-  <!--<script src="main.js"></script>-->
+    <!-- Fichier CSS qui contient tout le design -->
+    <link rel="stylesheet" href="cv.css">
 </head>
 
-<body>
-  <nav>
-    <a href="..">🏠 Index</a> / TP1
-  </nav>
-  <h1>TP 1</h1>
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <img src="../galilee.png" alt="Logo Galilee" />
 
-  <h2><a href="experiences/index.html">Expériences</a></h2>
+<body>
+
+    <!--
+        Conteneur principal du CV.
+        Toute la page est placée à l'intérieur.
+    -->
+    <main class="cv">
+
+
+        <!-- ==================================================
+             EN-TÊTE
+             ================================================== -->
+
+        <header class="entete">
+
+            <div class="identite">
+
+                <p class="petit-titre">
+                    RÉSEAUX & TÉLÉCOMMUNICATIONS
+                </p>
+
+                <h1>Norbert DJIGUEMDE</h1>
+
+                <h2>
+                    Étudiant en Master 2 Réseaux et Télécommunications
+                </h2>
+
+                <p class="presentation">
+                    À la recherche d'un stage de projet de fin d'études
+                    à partir de février/mars 2027.
+                </p>
+
+            </div>
+
+
+            <!--
+                Si tu ajoutes ta photo dans images/photo.jpg,
+                elle apparaîtra automatiquement ici.
+            -->
+            <div class="photo">
+                <img src="images/photo.jpg"
+                     alt="Photo de Norbert DJIGUEMDE">
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             INFORMATIONS DE CONTACT
+             ================================================== -->
+
+        <section class="contact">
+
+            <div>
+                <strong>Email</strong>
+                <a href="mailto:norbertdjiguemde91@gmail.com">
+                    norbertdjiguemde91@gmail.com
+                </a>
+            </div>
+
+            <div>
+                <strong>Téléphone</strong>
+                <span>+33 0743057542</span>
+            </div>
+
+            <div>
+                <strong>Localisation</strong>
+                <span>Villetaneuse, Île-de-France</span>
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PROFIL
+             ================================================== -->
+
+        <section>
+
+            <h2 class="titre-section">
+                Profil
+            </h2>
+
+            <p>
+                Étudiant en Master 2 Réseaux et Télécommunications à
+                l'Université Sorbonne Paris Nord, diplômé d'ingénieur
+                d'État en Réseaux et Télécommunications au Maroc.
+            </p>
+
+            <p>
+                Mon parcours m'a permis de développer des compétences
+                en architecture réseau sécurisé, réseaux mobiles 4G/5G,
+                ondes radio, cybersécurité, IoT et communication UAV.
+            </p>
+
+            <p>
+                Je souhaite développer mes recherches appliquées dans
+                le domaine des réseaux émergents, notamment les réseaux
+                5G/6G et l'intelligence artificielle appliquée aux réseaux.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             FORMATIONS
+             ================================================== -->
+
+        <section>
+
+            <h2 class="titre-section">
+                <a href="formations.html">
+                    Formations
+                </a>
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Période</th>
+                    <th>Formation</th>
+                </tr>
+
+                <tr>
+                    <td>2026 - 2027</td>
+
+                    <td>
+                        <strong>Master 2 Réseaux - Master M3IR</strong><br>
+
+                        Université Sorbonne Paris Nord -
+                        Institut Galilée, Villetaneuse
+
+                        <br>
+
+                        <span class="detail">
+                            Option : Réseaux et Télécommunications
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>2023 - 2026</td>
+
+                    <td>
+                        <strong>
+                            Diplôme d'Ingénieur d'État de Conception
+                        </strong><br>
+
+                        École Nationale des Sciences Appliquées
+                        de Safi - Université Cadi Ayyad
+
+                        <br>
+
+                        <span class="detail">
+                            Génie des Réseaux et Télécommunications
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>2021 - 2023</td>
+
+                    <td>
+                        <strong>
+                            Diplôme Universitaire de Technologie
+                        </strong><br>
+
+                        École Supérieure de Technologie de Fès
+
+                        <br>
+
+                        <span class="detail">
+                            Réseaux et Télécommunications
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>2019 - 2021</td>
+
+                    <td>
+                        <strong>Baccalauréat Technique</strong><br>
+
+                        Lycée Professionnel National de Koudougou
+
+                        <br>
+
+                        <span class="detail">
+                            Option : Télécommunications
+                        </span>
+                    </td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             COMPÉTENCES
+             ================================================== -->
+
+        <section>
+
+            <h2 class="titre-section">
+                Compétences
+            </h2>
+
+
+            <table>
+
+                <tr>
+                    <th>Domaine</th>
+                    <th>Compétences</th>
+                </tr>
+
+
+                <tr>
+                    <td>Réseaux mobiles & radio</td>
+
+                    <td>
+                        LTE / 4G, 5G NR / 5G Core,
+                        O-RAN, ondes radio,
+                        antennes, hyperfréquences
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Cybersécurité</td>
+
+                    <td>
+                        OPNsense, WatchGuard, AuthPoint,
+                        EPDR, Wazuh, VPN IPsec,
+                        IDS/IPS, WAF, NAC
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Réseaux IP</td>
+
+                    <td>
+                        TCP/IP, OSPF, BGP, EIGRP,
+                        MPLS, VLAN, NAT, ACL,
+                        DNS, DHCP, Active Directory
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Simulation</td>
+
+                    <td>
+                        GNS3, VMware, VirtualBox,
+                        ns-3, 5G-LENA, Atoll,
+                        CST Studio, OMNET+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Programmation</td>
+
+                    <td>
+                        Python, NumPy, SciPy,
+                        Pandas, Matplotlib
+                    </td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             EXPÉRIENCES
+             ================================================== -->
+
+        <section>
+
+            <h2 class="titre-section">
+                <a href="experiences.html">
+                    Expériences professionnelles
+                </a>
+            </h2>
+
+            <table>
+
+                <tr>
+                    <th>Période</th>
+                    <th>Expérience</th>
+                </tr>
+
+
+                <tr>
+                    <td>02/2026 - 06/2026</td>
+
+                    <td>
+                        <strong>
+                            Projet de Fin d'Études - FARASHA-SYSTEMS
+                        </strong><br>
+
+                        Étude, dimensionnement et conception
+                        d'une liaison radiofréquence sol-air
+                        sécurisée pour drone VTOL.
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>07/2025 - 09/2025</td>
+
+                    <td>
+                        <strong>
+                            Stagiaire Ingénieur Réseaux et Cybersécurité
+                        </strong><br>
+
+                        CYBER-VALUES - Mohammedia
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>09/2025 - 10/2025</td>
+
+                    <td>
+                        <strong>
+                            Stagiaire Ingénieur Réseaux Sans Fil et IoT
+                        </strong><br>
+
+                        VISIO-GREEN AFRICA - Agadir
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>09/2024 - 10/2024</td>
+
+                    <td>
+                        <strong>
+                            Stagiaire Ingénieur Réseaux
+                        </strong><br>
+
+                        Laboratoire de l'ENSA de Safi
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>04/2023 - 07/2023</td>
+
+                    <td>
+                        <strong>
+                            Technicien Supérieur Réseaux et Télécommunications
+                        </strong><br>
+
+                        3GCOM - Rabat
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>12/2020 - 01/2021</td>
+
+                    <td>
+                        <strong>
+                            Stagiaire Technicien en Télécommunications
+                        </strong><br>
+
+                        MOOV-AFRICA - Dédougou
+                    </td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PROJETS ACADÉMIQUES
+             ================================================== -->
+
+        <section>
+
+            <h2 class="titre-section">
+                Projets académiques
+            </h2>
+
+            <ul class="liste">
+
+                <li>
+                    Simulation pour le déploiement,
+                    la virtualisation et l'optimisation
+                    d'un réseau 5G.
+                </li>
+
+                <li>
+                    Modélisation d'un canal de propagation radio
+                    avec optimisation de l'emplacement des antennes.
+                </li>
+
+                <li>
+                    Conception d'une architecture WAN hybride
+                    sécurisée : MPLS + Internet + VPN IPsec.
+                </li>
+
+                <li>
+                    Conception et hébergement de sites Web.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             DISTINCTIONS
+             ================================================== -->
+
+        <section>
+
+            <h2 class="titre-section">
+                Distinctions et certifications
+            </h2>
+
+            <ul class="liste">
+
+                <li>
+                    1er de la promotion Cycle Ingénieur
+                    en Génie Réseaux et Télécommunications
+                    avec une moyenne de 16,76 / 20.
+                </li>
+
+                <li>
+                    2ème de la promotion DUT en
+                    Réseaux & Télécommunications.
+                </li>
+
+                <li>
+                    1er national - Bac Pro Télécommunications.
+                </li>
+
+                <li>
+                    Bourse d'excellence EUR Master 2 -
+                    Réseaux et Télécommunications.
+                </li>
+
+                <li>
+                    Bourse d'excellence de la Fondation Orange
+                    du Burkina Faso.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             LANGUES ET CENTRES D'INTÉRÊT
+             ================================================== -->
+
+        <section class="deux-colonnes">
+
+            <div>
+
+                <h2 class="titre-section">
+                    Langues
+                </h2>
+
+                <ul class="liste">
+
+                    <li>
+                        <strong>Moore :</strong>
+                        langue maternelle
+                    </li>
+
+                    <li>
+                        <strong>Français :</strong>
+                        courant
+                    </li>
+
+                    <li>
+                        <strong>Anglais :</strong>
+                        professionnel
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h2 class="titre-section">
+                    Centres d'intérêt
+                </h2>
+
+                <ul class="liste">
+
+                    <li>Football</li>
+
+                    <li>Plage</li>
+
+                    <li>Lecture</li>
+
+                    <li>Voyage</li>
+
+                    <li>Recherche en télécommunications</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PIED DE PAGE
+             ================================================== -->
+
+        <footer>
+
+            <p>
+                © 2026 Norbert DJIGUEMDE -
+                CV Web - TP1
+            </p>
+
+        </footer>
+
+    </main>
+
 </body>
 
 </html>
