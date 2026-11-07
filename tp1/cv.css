@@ -1,11 +1,11 @@
 /* =========================================================
-   RÉGLAGES GÉNÉRAUX
+   1. RÈGLES GÉNÉRALES
    ========================================================= */
 
 
 /*
-   Avec box-sizing: border-box,
-   les dimensions des éléments sont plus faciles à contrôler.
+   Permet de calculer correctement la largeur
+   et la hauteur des éléments.
 */
 * {
     box-sizing: border-box;
@@ -13,18 +13,10 @@
 
 
 /*
-   Permet un défilement fluide lorsqu'on utilise
-   des liens internes.
-*/
-html {
-    scroll-behavior: smooth;
-}
-
-
-/*
    Style général de la page.
 */
 body {
+
     margin: 0;
 
     font-family:
@@ -35,7 +27,7 @@ body {
     color: #1e293b;
 
     /*
-       Gradient demandé dans l'énoncé du TP.
+       Gradient demandé dans le TP.
     */
     background:
         linear-gradient(
@@ -50,43 +42,51 @@ body {
 
 
 /* =========================================================
-   CONTENEUR PRINCIPAL
+   2. CONTENEUR DU CV
    ========================================================= */
 
 .cv {
+
     width: 90%;
 
+    /*
+       Le CV ne devient pas trop large
+       sur un grand écran.
+    */
     max-width: 1100px;
 
+    /*
+       Centre le CV horizontalement.
+    */
     margin: 40px auto;
 
-    background-color: white;
-
     padding: 45px;
+
+    background-color: white;
 
     border-radius: 18px;
 
     /*
-       Ombre légère pour donner un effet
-       de carte professionnelle.
+       Ombre autour du CV.
     */
     box-shadow:
-        0 15px 40px rgba(15, 23, 42, 0.15);
+        0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 
 /* =========================================================
-   EN-TÊTE
+   3. EN-TÊTE
    ========================================================= */
 
 .entete {
+
     display: flex;
 
     justify-content: space-between;
 
     align-items: center;
 
-    gap: 40px;
+    gap: 30px;
 
     padding-bottom: 30px;
 
@@ -94,13 +94,10 @@ body {
 }
 
 
-.identite {
-    flex: 1;
-}
-
-
-.petit-titre {
-    margin: 0;
+/*
+   Petit texte au-dessus du nom.
+*/
+.domaine {
 
     color: #2563eb;
 
@@ -112,46 +109,38 @@ body {
 }
 
 
-.identite h1 {
-    margin: 8px 0;
+/*
+   Nom du candidat.
+*/
+.nom {
+
+    margin: 5px 0;
 
     color: #0f172a;
 
-    font-size: 44px;
-
-    line-height: 1.1;
+    font-size: 42px;
 }
 
 
-.identite h2 {
-    margin: 0;
+/*
+   Poste recherché.
+*/
+.poste {
+
+    font-size: 20px;
 
     color: #475569;
 
-    font-size: 21px;
-
-    font-weight: normal;
-
-    border: none;
-}
-
-
-.presentation {
-    max-width: 700px;
-
-    margin-top: 20px;
-
-    font-size: 17px;
-
-    color: #475569;
+    font-weight: bold;
 }
 
 
 /* =========================================================
-   PHOTO
+   4. PHOTO
    ========================================================= */
 
-.photo img {
+.photo {
+
     width: 160px;
 
     height: 160px;
@@ -163,8 +152,8 @@ body {
     border: 5px solid #2563eb;
 
     /*
-       Transition utilisée pour rendre
-       l'animation plus agréable.
+       Permet d'avoir une animation
+       lors du survol.
     */
     transition:
         transform 0.3s ease,
@@ -174,72 +163,26 @@ body {
 
 /*
    Consigne du TP :
-   agrandir l'image au passage de la souris.
+   agrandir l'image au survol.
 */
-.photo img:hover {
-    transform: scale(1.08);
+.photo:hover {
+
+    transform: scale(1.15);
 
     box-shadow:
-        0 10px 25px rgba(37, 99, 235, 0.35);
+        0 10px 25px rgba(37, 99, 235, 0.4);
 }
 
 
 /* =========================================================
-   CONTACT
+   5. TITRES
    ========================================================= */
 
-.contact {
-    display: grid;
+h1 {
 
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
-
-    margin: 25px 0;
-}
-
-
-.contact div {
-    padding: 15px;
-
-    background-color: #f8fafc;
-
-    border-left: 4px solid #2563eb;
-
-    border-radius: 8px;
-}
-
-
-.contact strong {
-    display: block;
-
-    color: #2563eb;
-
-    margin-bottom: 5px;
-}
-
-
-.contact a {
-    color: #334155;
-
-    text-decoration: none;
-}
-
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
-section {
     margin-top: 40px;
-}
 
-
-.titre-section {
-    margin-bottom: 15px;
-
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 
     color: #1d4ed8;
 
@@ -250,10 +193,11 @@ section {
 
 
 /*
-   Les liens des titres Formations
-   et Expériences.
+   Les liens dans les titres
+   gardent la même apparence.
 */
-.titre-section a {
+h1 a {
+
     color: inherit;
 
     text-decoration: none;
@@ -262,18 +206,21 @@ section {
 
 /*
    Consigne du TP :
-   changer la couleur des liens au survol.
+   changement de couleur au survol.
 */
 a:hover {
+
     color: #f97316;
+
 }
 
 
 /* =========================================================
-   TABLEAUX
+   6. TABLEAUX
    ========================================================= */
 
 table {
+
     width: 100%;
 
     border-collapse: collapse;
@@ -281,111 +228,87 @@ table {
     margin-top: 15px;
 
     background-color: white;
+
 }
 
 
 /*
-   Cellules du tableau.
+   Style des cellules.
 */
 th,
 td {
-    padding: 15px;
+
+    padding: 14px;
 
     border: 1px solid #cbd5e1;
 
     text-align: left;
 
     vertical-align: top;
+
 }
 
 
+/*
+   Première colonne des tableaux.
+*/
 th {
-    width: 25%;
 
     background-color: #eff6ff;
 
     color: #1e3a8a;
+
 }
 
 
 /*
    Consigne du TP :
-   colorer les lignes impaires.
+   colorer différemment les lignes impaires.
 */
 tr:nth-child(odd) {
+
     background-color: #f8fafc;
+
 }
 
 
 /*
    Consigne du TP :
-   changer la couleur d'une ligne
-   lorsque la souris passe dessus.
+   changer la couleur de fond
+   lorsque la souris passe sur une ligne.
 */
 tr:hover {
+
     background-color: #dbeafe;
 
     transition:
         background-color 0.2s ease;
+
 }
 
 
 /* =========================================================
-   TEXTE
+   7. LIENS
    ========================================================= */
 
-.detail {
-    color: #64748b;
+a {
 
-    font-size: 14px;
-}
-
-
-p {
-    color: #475569;
-}
-
-
-/* =========================================================
-   LISTES
-   ========================================================= */
-
-.liste {
-    padding-left: 25px;
-}
-
-
-.liste li {
-    margin-bottom: 10px;
-
-    color: #475569;
-}
-
-
-.liste li::marker {
     color: #2563eb;
+
+    font-weight: bold;
+
+    transition:
+        color 0.2s ease;
+
 }
 
 
 /* =========================================================
-   DEUX COLONNES
-   ========================================================= */
-
-.deux-colonnes {
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 40px;
-}
-
-
-/* =========================================================
-   PIED DE PAGE
+   8. PIED DE PAGE
    ========================================================= */
 
 footer {
+
     margin-top: 50px;
 
     padding-top: 20px;
@@ -397,106 +320,123 @@ footer {
     color: #64748b;
 
     font-size: 14px;
+
 }
 
 
 /* =========================================================
-   VERSION MOBILE
+   9. VERSION MOBILE
    ========================================================= */
 
 
 /*
-   Cette partie est obligatoire dans l'esprit
-   de la consigne du TP.
-
-   Lorsque l'écran fait au maximum 600 px,
-   le design est adapté aux smartphones.
+   La règle s'applique lorsque
+   la largeur de l'écran est inférieure
+   ou égale à 600 pixels.
 */
 @media only screen and (max-width: 600px) {
 
+
+    /*
+       Nouveau gradient sur petit écran.
+    */
     body {
+
         background:
             radial-gradient(
                 circle,
                 #dbeafe 0%,
                 #f8fafc 100%
             );
+
     }
 
 
+    /*
+       Le CV prend presque toute
+       la largeur du téléphone.
+    */
     .cv {
+
         width: 95%;
 
         margin: 15px auto;
 
         padding: 20px;
+
     }
 
 
+    /*
+       L'en-tête devient vertical.
+    */
     .entete {
+
         flex-direction: column;
 
         text-align: center;
+
     }
 
 
-    .identite h1 {
+    /*
+       Réduction de la taille du nom.
+    */
+    .nom {
+
         font-size: 32px;
+
     }
 
 
-    .identite h2 {
-        font-size: 18px;
-    }
+    .poste {
 
+        font-size: 17px;
 
-    .photo img {
-        width: 130px;
-
-        height: 130px;
     }
 
 
     /*
-       Les informations de contact
-       passent les unes sous les autres.
+       Réduction de la photo.
     */
-    .contact {
-        grid-template-columns: 1fr;
+    .photo {
+
+        width: 120px;
+
+        height: 120px;
+
     }
 
 
     /*
-       Les deux colonnes deviennent
-       une seule colonne.
-    */
-    .deux-colonnes {
-        grid-template-columns: 1fr;
-    }
-
-
-    /*
-       Le tableau peut défiler horizontalement
-       si nécessaire sur un petit écran.
+       Le tableau reste visible
+       sur un écran étroit.
     */
     table {
+
         display: block;
+
+        width: 100%;
 
         overflow-x: auto;
 
-        white-space: normal;
     }
 
 
     th,
     td {
+
         min-width: 150px;
 
         padding: 10px;
+
     }
 
 
-    .titre-section {
+    h1 {
+
         font-size: 23px;
+
     }
+
 }
