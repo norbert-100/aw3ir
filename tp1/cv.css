@@ -1,1 +1,502 @@
+/* =========================================================
+   RÉGLAGES GÉNÉRAUX
+   ========================================================= */
 
+
+/*
+   Avec box-sizing: border-box,
+   les dimensions des éléments sont plus faciles à contrôler.
+*/
+* {
+    box-sizing: border-box;
+}
+
+
+/*
+   Permet un défilement fluide lorsqu'on utilise
+   des liens internes.
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*
+   Style général de la page.
+*/
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #1e293b;
+
+    /*
+       Gradient demandé dans l'énoncé du TP.
+    */
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe 0%,
+            #f8fafc 50%,
+            #ede9fe 100%
+        );
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTENEUR PRINCIPAL
+   ========================================================= */
+
+.cv {
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 40px auto;
+
+    background-color: white;
+
+    padding: 45px;
+
+    border-radius: 18px;
+
+    /*
+       Ombre légère pour donner un effet
+       de carte professionnelle.
+    */
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.15);
+}
+
+
+/* =========================================================
+   EN-TÊTE
+   ========================================================= */
+
+.entete {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 3px solid #2563eb;
+}
+
+
+.identite {
+    flex: 1;
+}
+
+
+.petit-titre {
+    margin: 0;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.identite h1 {
+    margin: 8px 0;
+
+    color: #0f172a;
+
+    font-size: 44px;
+
+    line-height: 1.1;
+}
+
+
+.identite h2 {
+    margin: 0;
+
+    color: #475569;
+
+    font-size: 21px;
+
+    font-weight: normal;
+
+    border: none;
+}
+
+
+.presentation {
+    max-width: 700px;
+
+    margin-top: 20px;
+
+    font-size: 17px;
+
+    color: #475569;
+}
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+.photo img {
+    width: 160px;
+
+    height: 160px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #2563eb;
+
+    /*
+       Transition utilisée pour rendre
+       l'animation plus agréable.
+    */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/*
+   Consigne du TP :
+   agrandir l'image au passage de la souris.
+*/
+.photo img:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin: 25px 0;
+}
+
+
+.contact div {
+    padding: 15px;
+
+    background-color: #f8fafc;
+
+    border-left: 4px solid #2563eb;
+
+    border-radius: 8px;
+}
+
+
+.contact strong {
+    display: block;
+
+    color: #2563eb;
+
+    margin-bottom: 5px;
+}
+
+
+.contact a {
+    color: #334155;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+section {
+    margin-top: 40px;
+}
+
+
+.titre-section {
+    margin-bottom: 15px;
+
+    padding-bottom: 8px;
+
+    color: #1d4ed8;
+
+    font-size: 28px;
+
+    border-bottom: 2px solid #bfdbfe;
+}
+
+
+/*
+   Les liens des titres Formations
+   et Expériences.
+*/
+.titre-section a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/*
+   Consigne du TP :
+   changer la couleur des liens au survol.
+*/
+a:hover {
+    color: #f97316;
+}
+
+
+/* =========================================================
+   TABLEAUX
+   ========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+
+    background-color: white;
+}
+
+
+/*
+   Cellules du tableau.
+*/
+th,
+td {
+    padding: 15px;
+
+    border: 1px solid #cbd5e1;
+
+    text-align: left;
+
+    vertical-align: top;
+}
+
+
+th {
+    width: 25%;
+
+    background-color: #eff6ff;
+
+    color: #1e3a8a;
+}
+
+
+/*
+   Consigne du TP :
+   colorer les lignes impaires.
+*/
+tr:nth-child(odd) {
+    background-color: #f8fafc;
+}
+
+
+/*
+   Consigne du TP :
+   changer la couleur d'une ligne
+   lorsque la souris passe dessus.
+*/
+tr:hover {
+    background-color: #dbeafe;
+
+    transition:
+        background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.detail {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+p {
+    color: #475569;
+}
+
+
+/* =========================================================
+   LISTES
+   ========================================================= */
+
+.liste {
+    padding-left: 25px;
+}
+
+
+.liste li {
+    margin-bottom: 10px;
+
+    color: #475569;
+}
+
+
+.liste li::marker {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   DEUX COLONNES
+   ========================================================= */
+
+.deux-colonnes {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 40px;
+}
+
+
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
+
+footer {
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #cbd5e1;
+
+    text-align: center;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   VERSION MOBILE
+   ========================================================= */
+
+
+/*
+   Cette partie est obligatoire dans l'esprit
+   de la consigne du TP.
+
+   Lorsque l'écran fait au maximum 600 px,
+   le design est adapté aux smartphones.
+*/
+@media only screen and (max-width: 600px) {
+
+    body {
+        background:
+            radial-gradient(
+                circle,
+                #dbeafe 0%,
+                #f8fafc 100%
+            );
+    }
+
+
+    .cv {
+        width: 95%;
+
+        margin: 15px auto;
+
+        padding: 20px;
+    }
+
+
+    .entete {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .identite h1 {
+        font-size: 32px;
+    }
+
+
+    .identite h2 {
+        font-size: 18px;
+    }
+
+
+    .photo img {
+        width: 130px;
+
+        height: 130px;
+    }
+
+
+    /*
+       Les informations de contact
+       passent les unes sous les autres.
+    */
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+
+    /*
+       Les deux colonnes deviennent
+       une seule colonne.
+    */
+    .deux-colonnes {
+        grid-template-columns: 1fr;
+    }
+
+
+    /*
+       Le tableau peut défiler horizontalement
+       si nécessaire sur un petit écran.
+    */
+    table {
+        display: block;
+
+        overflow-x: auto;
+
+        white-space: normal;
+    }
+
+
+    th,
+    td {
+        min-width: 150px;
+
+        padding: 10px;
+    }
+
+
+    .titre-section {
+        font-size: 23px;
+    }
+}
