@@ -1,0 +1,64 @@
+body {
+    background-color: #e9ecef;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 15px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+form {
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 1px -1px #0003,
+                0 1px 1px #00000024,
+                0 1px 3px #0000001f;
+}
+
+label {
+    width: 150px;
+    display: inline-block;
+}
+
+input {
+    width: 250px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Champ invalide */
+input:invalid {
+    border-color: red;
+}
+
+/* Cacher le ✔ lorsque le champ est invalide */
+input:invalid + .icon-ok {
+    display: none;
+}
+
+/* Afficher le ✔ lorsque le champ est valide */
+input:valid + .icon-ok {
+    display: inline-block;
+}
+
+/* Bouton grisé si le formulaire est invalide */
+form:invalid input[type="submit"] {
+     margin-left: 150px;
+    background-color: gray;
+}
+
+.btn-primary {
+    border-radius: 5px;
+    padding: 6px 12px;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
