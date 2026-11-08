@@ -1,39 +1,155 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>TP3</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <title>TP AW #3 : Bootstrap</title>
 
-    <style>
-        body {
-            background-color: #e9ebee;
-            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-            font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
-        }
-    </style>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
 
-    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="main.js"></script>-->
+    <!-- JavaScript Bootstrap -->
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!-- Script de validation -->
+    <script src="js/form-validation.js"></script>
 </head>
 
 <body>
-    <nav>
-        <a href="..">🏠 Index</a> / TP3
-    </nav>
-    <h1>tp3</h1>
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
-    <img src="../galilee.png" alt="Logo Galilee" />
-</body>
 
+    <div class="container">
+
+        <h3 class="text-center mt-4 mb-4">
+            TP AW #3 : Bootstrap
+        </h3>
+
+        <h4 class="mb-4">Formulaire d'inscription</h4>
+
+        <form id="registrationForm">
+
+            <!-- Nom -->
+            <div class="row mb-3">
+                <label for="name" class="col-sm-3 col-form-label">
+                    Nom
+                </label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control"
+                        id="name" placeholder="Entrez votre nom">
+                </div>
+            </div>
+
+            <!-- Prénom -->
+            <div class="row mb-3">
+                <label for="firstname" class="col-sm-3 col-form-label">
+                    Prénom
+                </label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control"
+                        id="firstname" placeholder="Entrez votre prénom">
+                </div>
+            </div>
+
+            <!-- Date de naissance -->
+            <div class="row mb-3">
+                <label for="birthday" class="col-sm-3 col-form-label">
+                    Date de naissance
+                </label>
+
+                <div class="col-sm-9">
+                    <input type="date" class="form-control"
+                        id="birthday">
+                </div>
+            </div>
+
+            <!-- Adresse postale -->
+            <div class="row mb-3">
+                <label for="address" class="col-sm-3 col-form-label">
+                    Adresse postale
+                </label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control"
+                        id="address" placeholder="Entrez votre adresse">
+                </div>
+            </div>
+
+            <!-- Adresse mail -->
+            <div class="row mb-3">
+                <label for="email" class="col-sm-3 col-form-label">
+                    Adresse mail
+                </label>
+
+                <div class="col-sm-9">
+                    <input type="email" class="form-control"
+                        id="email" placeholder="exemple@gmail.com">
+                </div>
+            </div>
+
+            <!-- Ville pour Google Maps -->
+            <div class="row mb-3">
+                <label for="city" class="col-sm-3 col-form-label">
+                    Ville
+                </label>
+
+                <div class="col-sm-9">
+                    <input type="text" class="form-control"
+                        id="city" placeholder="Entrez votre ville">
+                </div>
+            </div>
+
+            <!-- Bouton de validation -->
+            <div class="text-center mt-4">
+                <button type="submit" id="submit"
+                    class="btn btn-primary">
+                    Valider
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- Fenêtre modale Bootstrap -->
+    <div class="modal fade" id="myModal" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Résultat du formulaire
+                    </h5>
+
+                    <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+                    ...
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary"
+                        data-bs-dismiss="modal">
+                        OK
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>
