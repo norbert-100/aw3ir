@@ -1,442 +1,499 @@
-/* =========================================================
-   1. RÈGLES GÉNÉRALES
-   ========================================================= */
 
+/* =========================================
+   1. CONFIGURATION GENERALE
+========================================= */
 
-/*
-   Permet de calculer correctement la largeur
-   et la hauteur des éléments.
-*/
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-/*
-   Style général de la page.
-*/
 body {
-
-    margin: 0;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    color: #1e293b;
-
-    /*
-       Gradient demandé dans le TP.
-    */
-    background:
-        linear-gradient(
-            135deg,
-            #dbeafe 0%,
-            #f8fafc 50%,
-            #ede9fe 100%
-        );
-
-    line-height: 1.6;
-}
-
-
-/* =========================================================
-   2. CONTENEUR DU CV
-   ========================================================= */
-
-.cv {
-
-    width: 90%;
-
-    /*
-       Le CV ne devient pas trop large
-       sur un grand écran.
-    */
-    max-width: 1100px;
-
-    /*
-       Centre le CV horizontalement.
-    */
-    margin: 40px auto;
-
-    padding: 45px;
-
-    background-color: white;
-
-    border-radius: 18px;
-
-    /*
-       Ombre autour du CV.
-    */
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-
-/* =========================================================
-   3. EN-TÊTE
-   ========================================================= */
-
-.entete {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 30px;
-
-    padding-bottom: 30px;
-
-    border-bottom: 3px solid #2563eb;
-}
-
-
-/*
-   Petit texte au-dessus du nom.
-*/
-.domaine {
-
-    color: #2563eb;
-
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    line-height: 1.5;
+    color: #263445;
+    background: linear-gradient(135deg, #e8eef6, #dce6f1, #f4f7fb);
+    padding: 20px;
+}
 
+/* =========================================
+   2. CONTENEUR PRINCIPAL
+========================================= */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================================
+   3. EN-TETE
+========================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 40px;
+    color: white;
+    background: linear-gradient(120deg, #10243e, #24558a);
+}
+
+.header > div {
+    flex: 1;
+    text-align: left;
+    order: 1;
+}
+
+.header h1 {
+    font-size: 31px;
+    color: white;
+    margin: 8px 0;
+}
+
+.header h2 {
+    font-size: 19px;
+    color: #dce9f8;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #e2eaf4;
+    margin: 6px 0;
+}
+
+.header p:first-child {
+    color: #a8c9ee;
     font-weight: bold;
-
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
-
-/*
-   Nom du candidat.
-*/
-.nom {
-
-    margin: 5px 0;
-
-    color: #0f172a;
-
-    font-size: 42px;
-}
-
-
-/*
-   Poste recherché.
-*/
-.poste {
-
-    font-size: 20px;
-
-    color: #475569;
-
-    font-weight: bold;
-}
-
-
-/* =========================================================
-   4. PHOTO
-   ========================================================= */
-
-.photo {
-
-    width: 160px;
-
-    height: 160px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    border: 5px solid #2563eb;
-
-    /*
-       Permet d'avoir une animation
-       lors du survol.
-    */
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/*
-   Consigne du TP :
-   agrandir l'image au survol.
-*/
-.photo:hover {
-
-    transform: scale(1.15);
-
-    box-shadow:
-        0 10px 25px rgba(37, 99, 235, 0.4);
-}
-
-
-/* =========================================================
-   5. TITRES
-   ========================================================= */
-
-h1 {
-
-    margin-top: 40px;
-
-    padding-bottom: 10px;
-
-    color: #1d4ed8;
-
-    font-size: 28px;
-
-    border-bottom: 2px solid #bfdbfe;
-}
-
-
-/*
-   Les liens dans les titres
-   gardent la même apparence.
-*/
-h1 a {
-
-    color: inherit;
-
+.header a {
+    color: white;
     text-decoration: none;
 }
 
-
-/*
-   Consigne du TP :
-   changement de couleur au survol.
-*/
-a:hover {
-
-    color: #f97316;
-
+.header img {
+    order: 2;
+    width: 205px;
+    height: 225px;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 8px;
 }
 
+/* AFFICHAGE SUR TELEPHONE */
 
-/* =========================================================
-   6. TABLEAUX
-   ========================================================= */
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .header > div {
+        text-align: center;
+    }
+
+    .header img {
+        width: 125px;
+        height: 145px;
+    }
+}
+
+/* =========================================
+   4. NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+    background: #f1f5f9;
+    border-bottom: 1px solid #dce3eb;
+}
+
+.navigation a {
+    display: inline-block;
+    padding: 8px 15px;
+    color: #17365d;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    background: #17365d;
+    color: #ffffff;
+}
+
+/* =========================================
+   5. SECTIONS GENERALES
+========================================= */
+
+.section {
+    margin: 18px 25px;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid #dce3eb;
+    border-radius: 8px;
+}
+
+.section-title {
+    color: #17365d;
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #2563a6;
+}
+
+.section h3 {
+    color: #24558a;
+    font-size: 15px;
+    margin: 12px 0 6px;
+}
+
+.section p {
+    margin: 6px 0;
+}
+
+.section ul {
+    margin: 7px 0 7px 22px;
+}
+
+.section li {
+    margin-bottom: 4px;
+}
+
+/* =========================================
+   6. TABLEAUX DU CV
+========================================= */
 
 table {
-
     width: 100%;
-
     border-collapse: collapse;
-
-    margin-top: 15px;
-
-    background-color: white;
-
+    margin: 10px 0;
+    background: #ffffff;
+    font-size: 13px;
 }
 
-
-/*
-   Style des cellules.
-*/
-th,
-td {
-
-    padding: 14px;
-
-    border: 1px solid #cbd5e1;
-
-    text-align: left;
-
-    vertical-align: top;
-
-}
-
-
-/*
-   Première colonne des tableaux.
-*/
 th {
-
-    background-color: #eff6ff;
-
-    color: #1e3a8a;
-
+    padding: 11px;
+    text-align: left;
+    color: #ffffff;
+    background: #17365d;
+    border: 1px solid #d5dee8;
 }
 
-
-/*
-   Consigne du TP :
-   colorer différemment les lignes impaires.
-*/
-tr:nth-child(odd) {
-
-    background-color: #f8fafc;
-
+td {
+    padding: 10px;
+    border: 1px solid #d5dee8;
+    vertical-align: top;
 }
 
-
-/*
-   Consigne du TP :
-   changer la couleur de fond
-   lorsque la souris passe sur une ligne.
-*/
-tr:hover {
-
-    background-color: #dbeafe;
-
-    transition:
-        background-color 0.2s ease;
-
+tbody tr:nth-child(odd) {
+    background: #f1f5f9;
 }
 
+tbody tr:hover {
+    background: #e1edfa;
+    transition: background 0.2s ease;
+}
 
-/* =========================================================
+/* =========================================
    7. LIENS
-   ========================================================= */
+========================================= */
 
 a {
+    color: #245ca0;
+    transition: color 0.2s ease;
+}
 
-    color: #2563eb;
+a:hover {
+    color: #e67e22;
+}
 
+/* =========================================
+   8. BOUTONS
+========================================= */
+
+.button {
+    display: inline-block;
+    padding: 9px 18px;
+    color: #ffffff !important;
+    background: #17365d;
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
-
-    transition:
-        color 0.2s ease;
-
+    transition: background 0.3s ease;
 }
 
+.button:hover {
+    background: #e67e22;
+}
 
-/* =========================================================
-   8. PIED DE PAGE
-   ========================================================= */
+/* =========================================
+   9. PAGES FORMATIONS ET EXPERIENCES
+========================================= */
 
-footer {
+.parcours-page {
+    padding: 20px 25px;
+}
 
-    margin-top: 50px;
+.parcours-intro {
+    margin-bottom: 15px;
+    padding: 13px 16px;
+    background: #f1f5f9;
+    border-left: 4px solid #2563a6;
+    border-radius: 6px;
+}
 
-    padding-top: 20px;
+.parcours-intro p {
+    margin: 3px 0;
+}
 
-    border-top: 1px solid #cbd5e1;
+.parcours-section-title {
+    color: #17365d;
+    font-size: 20px;
+    margin: 18px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #2563a6;
+}
 
-    text-align: center;
+.parcours-card {
+    margin-bottom: 12px;
+    padding: 15px 18px;
+    background: #ffffff;
+    border: 1px solid #d5dee8;
+    border-left: 5px solid #2563a6;
+    border-radius: 7px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
 
-    color: #64748b;
+.parcours-card h2 {
+    color: #17365d;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
 
+.parcours-card h3 {
+    color: #24558a;
     font-size: 14px;
+    margin: 9px 0 5px;
+}
+
+.parcours-card p {
+    margin: 4px 0;
+}
+
+.parcours-card ul {
+    margin: 5px 0 5px 20px;
+}
+
+.parcours-card li {
+    margin-bottom: 3px;
+}
+
+.parcours-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    margin-bottom: 8px;
+    color: #526276;
+    font-size: 13px;
+}
+
+.parcours-meta span {
+    font-weight: bold;
+}
+
+.parcours-card a {
+    color: #245ca0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.parcours-card a:hover {
+    color: #e67e22;
+    text-decoration: underline;
+}
+
+/* Etiquettes de competences */
+
+.parcours-tag {
+    display: inline-block;
+    margin: 3px 3px 3px 0;
+    padding: 4px 9px;
+    color: #1d4e89;
+    background: #eaf1fb;
+    border: 1px solid #d3e2f5;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* =========================================
+   10. PROFIL ET AUTRES ELEMENTS
+========================================= */
+
+.profile {
+    padding: 15px;
+    background: #f1f5f9;
+    border-left: 4px solid #2563a6;
+    border-radius: 6px;
+}
+
+strong {
+    color: #17365d;
+}
+
+/* =========================================
+   11. PIED DE PAGE
+========================================= */
+
+.footer {
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    background: #17365d;
+    font-size: 12px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* =========================================
+   12. ADAPTATION TABLETTES
+========================================= */
+
+@media screen and (max-width: 900px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .section {
+        margin: 14px;
+    }
+
+    .parcours-page {
+        padding: 15px;
+    }
 
 }
 
+/* =========================================
+   13. ADAPTATION TELEPHONES
+========================================= */
 
-/* =========================================================
-   9. VERSION MOBILE
-   ========================================================= */
+@media screen and (max-width: 600px) {
 
-
-/*
-   La règle s'applique lorsque
-   la largeur de l'écran est inférieure
-   ou égale à 600 pixels.
-*/
-@media only screen and (max-width: 600px) {
-
-
-    /*
-       Nouveau gradient sur petit écran.
-    */
     body {
-
-        background:
-            radial-gradient(
-                circle,
-                #dbeafe 0%,
-                #f8fafc 100%
-            );
-
+        padding: 0;
+        font-size: 13px;
     }
 
-
-    /*
-       Le CV prend presque toute
-       la largeur du téléphone.
-    */
-    .cv {
-
-        width: 95%;
-
-        margin: 15px auto;
-
-        padding: 20px;
-
-    }
-
-
-    /*
-       L'en-tête devient vertical.
-    */
-    .entete {
-
-        flex-direction: column;
-
-        text-align: center;
-
-    }
-
-
-    /*
-       Réduction de la taille du nom.
-    */
-    .nom {
-
-        font-size: 32px;
-
-    }
-
-
-    .poste {
-
-        font-size: 17px;
-
-    }
-
-
-    /*
-       Réduction de la photo.
-    */
-    .photo {
-
-        width: 120px;
-
-        height: 120px;
-
-    }
-
-
-    /*
-       Le tableau reste visible
-       sur un écran étroit.
-    */
-    table {
-
-        display: block;
-
+    .container {
         width: 100%;
+        border-radius: 0;
+    }
 
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 20px 12px;
+    }
+
+    .header img {
+        width: 115px;
+        height: 115px;
+    }
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .navigation {
+        gap: 4px;
+        padding: 8px;
+    }
+
+    .navigation a {
+        padding: 7px 9px;
+        font-size: 12px;
+    }
+
+    .section {
+        margin: 10px;
+        padding: 13px;
+    }
+
+    .section-title {
+        font-size: 17px;
+    }
+
+    .parcours-page {
+        padding: 12px;
+    }
+
+    .parcours-card {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+
+    .parcours-card h2 {
+        font-size: 16px;
+    }
+
+    .parcours-section-title {
+        font-size: 18px;
+    }
+
+    .parcours-meta {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    /* Défilement horizontal des tableaux */
+
+    table {
+        display: block;
         overflow-x: auto;
-
+        white-space: normal;
+        min-width: 100%;
     }
 
-
-    th,
-    td {
-
-        min-width: 150px;
-
-        padding: 10px;
-
+    th, td {
+        padding: 8px;
+        font-size: 12px;
     }
 
+}
 
-    h1 {
+/* =========================================
+   14. ACCESSIBILITE
+========================================= */
 
-        font-size: 23px;
-
-    }
-
+a:focus,
+button:focus {
+    outline: 2px solid #e67e22;
+    outline-offset: 3px;
 }
